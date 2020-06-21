@@ -57,7 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              Image.asset("assets/images/background.jpeg"),
+              Image.asset(
+                "assets/images/background-2.png",
+                // height: 120.0,
+              ),
             ],
           ),
         ],
