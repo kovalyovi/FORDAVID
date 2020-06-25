@@ -31,39 +31,121 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
+    var height = size.height;
+    var width = size.width;
+
+    // print("HEIGHT: $height");
+    // print("WIDTH: $width");
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Stack(
-        children: <Widget>[
-          Image.asset("assets/images/background.jpeg"),
-          Column(
-            children: <Widget>[
-              Text("I am the first text"),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text("I am the second text with padding"),
-              ),
-              Container(
-                padding: EdgeInsets.all(12.0),
-                color: Colors.yellow,
-                child: Text(
-                  "I am the third text with padding, parent color and text style",
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w600,
-                  ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            //1
+            Container(
+              height: 100.0,
+              width: width,
+              color: Colors.yellow[300],
+            ),
+            //2
+            Container(
+              height: 100.0,
+              width: width,
+              color: Colors.blue[300],
+            ),
+            //3
+            Row(
+              children: <Widget>[
+                //3.1
+                Container(
+                  height: 100.0,
+                  width: width / 3,
+                  color: Colors.brown[50],
                 ),
-              ),
-              Image.asset(
-                "assets/images/background-2.png",
-                // height: 120.0,
-              ),
-            ],
-          ),
-        ],
+                //3.2
+                Container(
+                  height: 100.0,
+                  width: width / 3,
+                  color: Colors.brown[200],
+                ),
+                //3.3
+                Container(
+                  height: 100.0,
+                  width: width / 3,
+                  color: Colors.brown[500],
+                ),
+              ],
+            ),
+            //4
+            Row(
+              children: <Widget>[
+                //4.1
+                Column(
+                  children: <Widget>[
+                    // 4.1.1
+                    Container(
+                      height: 100.0,
+                      width: width / 2,
+                      color: Colors.orange[100],
+                    ),
+                    // 4.1.2
+                    Container(
+                      height: 100.0,
+                      width: width / 2,
+                      color: Colors.orange[200],
+                    ),
+                  ],
+                ),
+                //4.2
+                Container(
+                  height: 200.0,
+                  width: width / 4,
+                  color: Colors.orange[500],
+                ),
+                //4.3
+                Container(
+                  height: 200.0,
+                  width: width / 4,
+                  color: Colors.orange[800],
+                ),
+              ],
+            ),
+            //5
+            Row(
+              children: <Widget>[
+                // 5.1
+                Container(
+                  height: 100.0,
+                  width: width / 3,
+                  color: Colors.red[50],
+                ),
+                // 5.2
+                Container(
+                  height: 100.0,
+                  width: width / 3,
+                  color: Colors.red[100],
+                ),
+                // 5.3
+                Container(
+                  height: 100.0,
+                  width: width / 3,
+                  color: Colors.red[200],
+                ),
+              ],
+            ),
+            //6
+            Container(
+              height: 100.0,
+              width: width,
+              color: Colors.green[300],
+            ),
+          ],
+        ),
       ),
     );
   }
